@@ -2,9 +2,17 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  /* compiler{
-    styled-components = true;
-  } */
+  compiler: {
+    styledComponents: true,
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "unsplash.com",
+      },
+    ],
+  },
 };
 
 module.exports = nextConfig;
