@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
+import styled from "styled-components";
 import styles from "../styles/Home.module.css";
-import Layout from "../components/Layout/Layout";
 
 export default function Home() {
   return (
@@ -12,9 +12,27 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <Layout></Layout>
-      </main>
+      <Background>
+        <Image
+          src="https://unsplash.com/photos/9y7y26C-l4Y/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjU5MjcwNjYw&force=true&w=2400"
+          alt="Schöne Fische"
+          width={2400}
+          height={1800}
+        />
+      </Background>
     </div>
   );
 }
+
+const Background = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  @media (max-width: 600px) {
+    display: none;
+  }
+`;
